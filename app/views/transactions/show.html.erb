@@ -1,0 +1,46 @@
+<section class="content-header">
+  <h1> Transactions Details</h1>
+</section>
+<section class="content">
+<div class="box box-info">
+  <div class="box-body box-profile">
+    <div class="profile-box">
+      <div class="profile-inner clearfix">
+        <div class="user-detail-block">
+          
+          <div class="p-blocks">
+            <label class="view-a left-a">Transaction ID: </label>
+            <span class="view-a right-a"><%= transaction_id(@transaction)%></span>
+          </div>
+
+          <div class="p-blocks">
+            <label class="view-a left-a">Amount: </label>
+            <span class="view-a right-a"><%= amount(@transaction)%></span>
+          </div>
+
+          <div class="p-blocks">
+            <label class="view-a left-a">Transaction_Type: </label>
+            <span class="view-a right-a"><%= transaction_type(@transaction)%></span>
+          </div>
+
+          <div class="p-blocks">
+            <label class="view-a left-a">Date: </label>
+            <span class="view-a right-a"><%=transaction_date(@transaction)%></span>
+          </div>
+
+
+          <div class="p-blocks">
+            <label class="view-a left-a">Account Number: </label>
+            <span class="view-a right-a"><%= account_number%></span>
+          </div>
+
+          <div class="p-blocks">
+            <label class="view-a left-a">Name: </label>
+            <span class="view-a right-a"><%=user(@transaction)%></span>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+</section>

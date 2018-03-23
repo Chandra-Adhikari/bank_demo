@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hammer
+  api_key: '522261452549364'
+  api_secret: L-A4lQ4nCtIdE1N6z5-uPBUKhpY
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hammer
+  api_key: '522261452549364'
+  api_secret: L-A4lQ4nCtIdE1N6z5-uPBUKhpY
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hammer
+  api_key: '522261452549364'
+  api_secret: L-A4lQ4nCtIdE1N6z5-uPBUKhpY
+  enhance_image_tag: true
+  static_image_support: false

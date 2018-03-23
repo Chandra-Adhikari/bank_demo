@@ -1,0 +1,68 @@
+   <section class="content">
+   <%if current_user.role == "user"%>
+   <p>Available Balance</p>
+      <h1>
+       <%=user_balance%>
+      </h1>
+      <%else%>
+        <h1>Transactions</h1>
+      <%end%>
+      <div class="box box-info">
+      <% if current_user.role.eql?("user")%>
+        <div class="text-right attendee-cent-s form-group">
+            <%= link_to "Create Transaction", new_transaction_path, :class => "btn btn-default btn-green" %>
+        </div>
+      <%else%>
+        <%= form_tag transactions_path, method: :get, class:"c_form" do  %>
+         <div class="text-right form-group attendee-cent-s1">
+           <%=  text_field_tag :search, nil, class:"form-control",placeholder: 'Search Account Number' %>
+           <div class="input-group-btn">
+             <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+           </div>
+         </div>
+        <%end%>
+      <%end%>
+      <p class="transaction-log">
+          Download:
+          <%= link_to "CSV", transactions_path(format: "csv", transaction: @transactions) %> |
+          <%= link_to "Excel", transactions_path(format: "xls", transaction: @transactions) %>
+        </p>
+                 
+           <div class="box-body">
+           <div class="table-responsive">
+             <table id="example2" class="table-width table table-bordered table-hover">
+               <thead>
+                 <tr>
+                  <th>TransactionID</th>
+                  <th>Account Number</th>
+                  <th>Date</th>
+                   <th>Amount</th>
+                  <th>Transaction Type</th>
+                  <th>Actions</th>
+                </tr>
+               </thead>
+               <%= "No Sub Admin user found." unless @transactions.present?%>
+               <% @transactions.each do |transaction| %>
+                 <% unless transaction.eql?(nil) %>
+                   <tbody>
+                     <tr class="even">
+                       <td><%= transaction_id(transaction)%></td>
+                       <td><%= transaction.user.account.account_number %></td>
+                       <td><%= transaction_date(transaction)%></td>
+                       <td><%= amount(transaction)%></td>
+                       <td><%= transaction_type(transaction)%></td>
+                       <td style="max-width: 350px;">
+                
+                         <a><%= link_to "View",transaction_path(id: transaction.id), :class=>"btn btn-default btn-green"%></a>
+                         <a>
+                        </td>
+                     </tr>
+                   </tbody>
+                 <%end%>
+               <%end%>
+             </table>
+             <%= will_paginate  @transactions, renderer: BootstrapPagination::Rails %>
+             </div>
+           </div>
+         </div>
+   </section>

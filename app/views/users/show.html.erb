@@ -1,0 +1,41 @@
+<section class="content-header">
+  <h1>My profile</h1>
+</section>
+<section class="content">
+<div class="box box-info">
+  <div class="box-body box-profile">
+    <div class="profile-box">
+      <div class="profile-inner clearfix">
+        <div class="user-detail-block">
+          <%if current_user.role.eql?("user")%>
+            <div class="p-blocks">
+              <label class="view-a left-a">Account Number: </label>
+              <span class="view-a right-a"><%= account_number%></span>
+            </div>
+          <%end%>
+          <div class="p-blocks">
+            <label class="view-a left-a">Name </label>
+            <span class="view-a right-a"><%= user_name%></span>
+          </div>
+
+          <div class="p-blocks">
+            <label class="view-a left-a">Email: </label>
+            <span class="view-a right-a"><%= email%></span>
+          </div>
+
+          <div class="p-blocks">
+            <label class="view-a left-a">Address: </label>
+            <span class="view-a right-a"><%= address%></span>
+          </div>
+          <%if current_user.role.eql?("user")%>
+            <div class="p-blocks">
+              <label class="view-a left-a">Available Balance: </label>
+              <span class="view-a right-a"><%=user_balance%></span>
+            </div>
+          <%end%>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+</section>

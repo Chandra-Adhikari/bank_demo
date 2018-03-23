@@ -1,0 +1,27 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require alertify
+ *= require alertify/default
+ *= require alertify/bootstrap
+ *= require bootstrap.min
+ *= require AdminLTE
+ *= require _all-skins.min
+ *= require style_admin
+ *= require admin_pannel
+ *= require bootstrap-datepicker
+ */
+.error {
+    color: #e21414;
+}
+.attendee-cent-s1{display: inline-flex!important;float: right;margin-right: 100px!important;margin-top: 10px!important;}

@@ -1,0 +1,6 @@
+<%@user.account.reload %>
+<p>Hello <%=@name%></p>	
+    <p>
+      The Transaction of Rs <%=@transaction.amount%> <%= @transaction.transaction_type%>ed on your account. <br>
+      Your Availabe Balance is <%=@user.account.balance%>
+    </p>
