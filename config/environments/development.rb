@@ -59,7 +59,7 @@ Rails.application.configure do
  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
  config.action_mailer.smtp_settings = {
-  :user_name => 'javed.hussain@mobiloitte.com',
+  :user_name => 'chandra.adhikari@mobiloitte.com',
   :password => 'Mobiloitte1',
   :domain => 'sendgrid.com',
   :address => 'smtp.sendgrid.net',
